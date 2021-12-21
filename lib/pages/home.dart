@@ -29,6 +29,9 @@ Future<Temperature?> showresoult() async {
 
 
     return Scaffold(
+
+
+
       floatingActionButton: FloatingActionButton(onPressed: () {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home(cityNAme: ''
       ),
@@ -42,9 +45,20 @@ Future<Temperature?> showresoult() async {
       ),
 
 
+      body:
 
-      body: Center(
-        child: FutureBuilder(
+      SafeArea(child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/kep.jpg')
+          )
+        ),
+
+
+
+       child: Center(
+        child:
+        FutureBuilder(
           future: showresoult(),
           builder: (context,snapshot){
             if(snapshot.hasData){
@@ -80,7 +94,8 @@ Future<Temperature?> showresoult() async {
           }
         ),
       ),
-
+      ),
+    ),
     );
   }
 }
